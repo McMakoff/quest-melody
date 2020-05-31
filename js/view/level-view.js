@@ -30,8 +30,6 @@ export default class LevelView extends AbstractView {
 
   onAnswer() {}
 
-  updateTemplate(level) {}
-
   bind() {
     const inputs = this.element.querySelectorAll(`.artist__input`);
     Array.from(inputs).forEach((input) => {
