@@ -95,6 +95,10 @@
   background-position: -5px -123px;
 
   cursor: pointer;
+
+  &.__correct {
+    background-position-y: -182px;
+  }
 }
 
 .game__input:checked + .game__check {

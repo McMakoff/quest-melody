@@ -17,6 +17,14 @@ export default class QuestModel {
     return this._state.time;
   }
 
+  get points() {
+    return this._state.points;
+  }
+
+  get lives() {
+    return this._state.lives;
+  }
+
   changeLevel() {
     this._state.level += 1;
   }
@@ -25,7 +33,15 @@ export default class QuestModel {
     this._state.time -= 1;
   }
 
+  changePoints(point) {
+    this._state.points.push(point);
+  }
+
+  changeLive() {
+    this._state.lives -= 1;
+  }
+
   restart() {
-    this._state = Object.assign({}, initialState);
+    this._state = {...initialState};
   }
 }

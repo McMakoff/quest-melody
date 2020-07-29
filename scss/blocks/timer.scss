@@ -4,6 +4,21 @@
 
 @import "../variables/colors";
 
+.spalsh__screen {
+  position: absolute;
+  z-index: 0;
+
+  left: 0;
+  top: 65px;
+
+  width: 100%;
+  height: 100%;
+
+  .timer {
+    position: static;
+  }
+}
+
 .timer {
   position: absolute;
   z-index: 0;

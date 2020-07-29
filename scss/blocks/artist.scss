@@ -32,7 +32,8 @@
   border-color: $color-orange;
 }
 
-.artist:active .artist__picture {
+.artist:active .artist__picture,
+.artist__picture.__correct {
   border-color: $color-hover;
 }
 

@@ -18,9 +18,9 @@ export default class HeaderView extends AbstractView {
       </svg>
     
       <div class="timer__value">
-        <span class="timer__mins">05</span>
+        <span class="timer__mins">${this.minute}</span>
         <span class="timer__dots">:</span>
-        <span class="timer__secs">00</span>
+        <span class="timer__secs">${this.second}</span>
       </div>
   
       <div class="game__mistakes">
@@ -34,11 +34,19 @@ export default class HeaderView extends AbstractView {
     );
   }
 
-  timeUpdate(allSecond) {
+  get minute() {
+    return `0${Math.floor(this.state.time / 60)}`;
+  }
+
+  get second() {
+    const secondRemaining = this.state.time % 60;
+    return secondRemaining < 10 ? `0${secondRemaining}` : `${secondRemaining}`;
+  }
+
+  timeUpdate() {
     const second = this.element.querySelector(`.timer__secs`);
     const minute = this.element.querySelector(`.timer__mins`);
-    const secondsRemaining = allSecond % 60;
-    second.textContent = secondsRemaining < 10 ? `0${secondsRemaining}` : `${secondsRemaining}`;
-    minute.textContent = `0${Math.floor(allSecond / 60)}`;
+    minute.textContent = this.minute;
+    second.textContent = this.second;
   }
 }
